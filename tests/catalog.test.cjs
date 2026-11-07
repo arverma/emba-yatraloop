@@ -1,3 +1,5 @@
 const { test } = require('node:test'); const assert = require('node:assert/strict'); require('../dist/catalog.js');
 test('sample prices vary within the allowed range', () => { const values = TRIP_CATALOG.map(x=>x.price); assert.ok(values.every(x=>x>=7000&&x<=25000)); assert.equal(new Set(values).size,5); });
 test('countdown uses calendar days and never shows expired departures as upcoming', () => { assert.equal(daysUntil('2026-11-21',new Date('2026-11-07T08:00:00Z')),14); assert.equal(daysUntil('2026-11-21',new Date('2026-11-21T08:00:00Z')),0); assert.equal(daysUntil('2026-11-21',new Date('2026-11-22T08:00:00Z')),-1); });
+test('each trip has a duration, departure and available seats', () => { for (const trip of TRIP_CATALOG) { assert.equal(trip.nights,trip.days-1); assert.ok(trip.seats>0); assert.match(trip.departure,/^\d{4}-\d{2}-\d{2}$/); } });
+test('next departure is earliest upcoming regardless of listing order', () => { assert.equal(nextTrip(new Date('2026-11-07T08:00:00Z')).name,'Himachal'); assert.equal(nextTrip(new Date('2026-11-22T08:00:00Z')).name,'Rajasthan'); assert.equal(nextTrip(new Date('2026-12-20T08:00:00Z')),null); });
