@@ -23,3 +23,5 @@ Testimonial portraits are served as a 468×312 lossless WebP sprite, sized for 5
 Illustrative destination prices and the dated Himachal departure are stored in `dist/catalog.js`. The countdown uses the current date in India and hides an expired departure; update the departure date when preparing a future presentation. These sample prices do not alter the dashboard forecast or its scenario trip values.
 
 The trip catalog also stores illustrative trip lengths, departure dates, and seat counts. Expired departures are not displayed as available. The Himachal concept describes 24×7 captain support, personal photography, and end-of-day photo delivery.
+
+The support widget and “Talk to captain” action are offline interface previews. Messages stay in the browser and are not sent to a captain or support team; connecting real support requires a separate service.
