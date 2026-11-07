@@ -19,3 +19,5 @@ The repository includes a GitHub Actions workflow that publishes `dist/` to GitH
 `dist/reviews.js` contains fictional star ratings, review counts and testimonials for the classroom mockup. The Google-style badge is a visual example, not a linked Google Business profile. None of these are customer reviews or actual campaign results.
 
 Testimonial portraits are served as a 468×312 lossless WebP sprite, sized for 52px avatars at up to 3× display density. The full-resolution PNG is retained in `source-assets/`; regenerate with `cwebp -resize 468 312 -lossless -z 9 source-assets/traveller-portraits-original.png -o dist/images/traveller-portraits.webp`.
+
+Illustrative destination prices and the dated Himachal departure are stored in `dist/catalog.js`. The countdown uses the current date in India and hides an expired departure; update the departure date when preparing a future presentation. These sample prices do not alter the dashboard forecast or its scenario trip values.

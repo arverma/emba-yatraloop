@@ -30,5 +30,7 @@
   const stories = (items, title) => `<section class="testimonial-section"><div class="testimonial-heading"><div><p class="eyebrow">TRAVELLER STORIES</p><h3>${title}</h3></div><p>Moments, memories and a little inspiration for your next journey.</p></div><div class="testimonial-grid">${items.map(([quote, name, handle, portrait, context]) => `<figure class="testimonial-card"><div class="testimonial-stars" aria-label="Five stars">★★★★★</div><blockquote>“${quote}”</blockquote><figcaption><span class="traveller-avatar avatar-${portrait}" role="img" aria-label="Portrait of ${name}"></span><span class="traveller-identity"><b>${name}</b><span>${context}</span><span class="instagram-handle" aria-label="Instagram ${handle}">◎ ${handle}</span></span></figcaption></figure>`).join('')}</div></section>`;
   const mainSection = document.querySelector('.campaign-intro');
   if (mainSection) mainSection.insertAdjacentHTML('afterend', stories(mainStories, 'The stories that stay with you.'));
+  const listingPage = document.querySelector('body.trip-page #destinations');
+  if (listingPage) listingPage.insertAdjacentHTML('afterend', stories(mainStories, 'The stories that stay with you.'));
   document.querySelectorAll('.experience-banner').forEach(section => section.insertAdjacentHTML('afterend', stories(himachalStories, 'A little more than a trip.')));
 })();
