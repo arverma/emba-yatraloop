@@ -25,3 +25,5 @@ Illustrative destination prices and the dated Himachal departure are stored in `
 The trip catalog also stores illustrative trip lengths, departure dates, and seat counts. Expired departures are not displayed as available. The Himachal concept describes 24×7 captain support, personal photography, and end-of-day photo delivery.
 
 The support widget and “Talk to captain” action are offline interface previews. Messages stay in the browser and are not sent to a captain or support team; connecting real support requires a separate service.
+
+Himachal cost and cancellation copy is an illustrative proposal for the fictional concept. The cancellation windows were benchmarked against JustWravel's published domestic-tour policy (https://static.justwravel.com/files/cgnfe1hd/production/5031d9f0132e7f12272ae0b0b3ebf30e4e4e7e61.pdf); this concept proposes an original-payment refund at 30+ days and a full refund if the operator cancels. No actual booking or refund is processed.
