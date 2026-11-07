@@ -11,6 +11,8 @@
   };
   document.querySelectorAll('#destinations .destination').forEach(card=>{const name=card.querySelector('h4')?.textContent;const trip=TRIP_CATALOG.find(item=>item.name===name);const facts=card.querySelector('.trip-facts');if(trip&&facts)facts.insertAdjacentHTML('afterend',offerHTML(trip));});
   const himachal=TRIP_CATALOG.find(t=>t.name==='Himachal');
+  const departure=daysUntil(himachal.departure)>=0 ? `Next departure: ${formatDate(himachal.departure)} · ${himachal.days} days / ${himachal.nights} nights` : 'Next departure: dates to be announced';
+  document.querySelectorAll('#group-fit, #cancellation').forEach(section=>{const info=document.createElement('p');info.className='departure-proof';info.textContent=departure;section.querySelector('h4').insertAdjacentElement('afterend',info);});
   document.querySelectorAll('.price-summary').forEach(summary=>summary.insertAdjacentHTML('afterend',`<div class="detail-offer">${offerHTML(himachal)}</div>`));
   const dialog=document.getElementById('review');
   if(!dialog)return;
