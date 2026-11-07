@@ -4,7 +4,7 @@ IIM Bodh Gaya EMBA · Data Driven Marketing Decisions · Case 4 · 13 November 2
 
 Open `dist/index.html` directly for offline use. No installation, backend, tracking or remote runtime assets. Hosted publication may impose Sites private access; the local folder has no login.
 
-Presentation sequence: Ads → Pages → How it works → Dashboard. Keys 1–5 jump to sections; D focuses Dashboard. Reset levers restores quarterly view, ₹14,000 scenario trip value, two Q3 promotions and 6% test conversion.
+Presentation sequence: Ads → Pages → How it works → Dashboard. Ads open standalone `trips.html` or `himachal.html` sections; both pages link back to the campaign. Keys 1–5 jump to sections; D focuses Dashboard. Reset levers restores quarterly view, ₹14,000 scenario trip value, two Q3 promotions and 6% test conversion.
 
 `dist/data.js` owns inputs and precomputed plan outputs. `dist/model.js` calculates dashboard results. Run `node --test tests/model.test.cjs` for forecast reconciliation, tranche sensitivity, Q3 overflow and ROAS checks. Meta sensitivity deliberately holds tranche CPL at the brief's rounded ₹1,190 while the full base funnel uses exact rates. Uplift follows seasonality. No paid halo is applied to CRM.
 
