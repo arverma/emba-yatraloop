@@ -17,3 +17,5 @@ All inclusions/exclusions and refund terms are SAMPLE. No package price, person,
 The repository includes a GitHub Actions workflow that publishes `dist/` to GitHub Pages whenever `main` is updated. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The first successful workflow run will publish the site at the repository's Pages URL.
 
 `dist/reviews.js` contains fictional star ratings, review counts and testimonials for the classroom mockup. The Google-style badge is a visual example, not a linked Google Business profile. None of these are customer reviews or actual campaign results.
+
+Testimonial portraits are served as a 468×312 lossless WebP sprite, sized for 52px avatars at up to 3× display density. The full-resolution PNG is retained in `source-assets/`; regenerate with `cwebp -resize 468 312 -lossless -z 9 source-assets/traveller-portraits-original.png -o dist/images/traveller-portraits.webp`.
