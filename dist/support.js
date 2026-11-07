@@ -13,6 +13,15 @@
   root.querySelector('.support-close').addEventListener('click',close);
   root.querySelectorAll('[data-question]').forEach(button=>button.addEventListener('click',()=>{ add(button.textContent,'user'); add(replies[button.dataset.question],'reply'); }));
   root.querySelector('.support-form').addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();if(!value)return;add(value,'user');input.value='';add('Thanks for your message. This is a preview, so it has not been sent to a live support team. Try the suggested questions above.','reply');});
-  document.querySelectorAll('[data-talk-captain]').forEach(button=>button.addEventListener('click',()=>open('captain')));
+  const captainButtons=document.querySelectorAll('[data-talk-captain]');
+  if(captainButtons.length){
+    const captainDialog=document.createElement('dialog');
+    captainDialog.className='captain-instagram';
+    captainDialog.setAttribute('aria-labelledby','captain-instagram-title');
+    captainDialog.innerHTML=`<button class="captain-instagram-close" type="button" aria-label="Close">×</button><span class="instagram-mark" aria-hidden="true">◎</span><p class="captain-instagram-kicker">MEET YOUR CAPTAIN</p><h2 id="captain-instagram-title">Get to know the vibe.</h2><p>Say hi on Instagram, ask about the trip and get to know your captain before you go.</p><p class="captain-instagram-note">The captain’s Instagram profile isn’t connected yet.</p><button class="captain-instagram-unavailable" type="button" disabled>Instagram chat coming soon</button>`;
+    document.body.appendChild(captainDialog);
+    captainButtons.forEach(button=>button.addEventListener('click',()=>captainDialog.showModal()));
+    captainDialog.querySelector('.captain-instagram-close').addEventListener('click',()=>captainDialog.close());
+  }
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden)close();});
 })();
