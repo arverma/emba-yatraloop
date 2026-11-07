@@ -11,3 +11,7 @@ Presentation sequence: Ads → Pages → How it works → Dashboard. Ads open st
 The four 1080px PNG creatives are in `dist/ads/`. Illustrative AI-generated travel imagery is in `dist/images/`; it depicts fictional scenes and people. Their exact text and deterministic artwork can be regenerated on macOS with `swift -module-cache-path /tmp/yatraloop-swift-cache scripts/render-ads.swift`.
 
 All inclusions/exclusions and refund terms are SAMPLE. No package price, person, testimonial or inventory claim is invented. Georgia and system sans-serif fonts support offline display.
+
+## GitHub Pages
+
+The repository includes a GitHub Actions workflow that publishes `dist/` to GitHub Pages whenever `main` is updated. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The first successful workflow run will publish the site at the repository's Pages URL.
